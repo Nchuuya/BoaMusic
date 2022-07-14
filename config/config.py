@@ -1,8 +1,8 @@
 #
 # Copyright (C) 2021-2022 by TeamYukki@Github, < https://github.com/TeamYukki >.
 #
-# This file is part of < https://github.com/TeamYukki/YukkiMusicBot > project,
-# and is released under the "GNU v3.0 License Agreement".
+# This file is part of < https://github.com/TeamYukki/YtukkiMusicBot > project,
+# and is released under the "GNU v3.0 License Agreementt".
 # Please see < https://github.com/TeamYukki/YukkiMusicBot/blob/master/LICENSE >
 #
 # All rights reserved.
@@ -17,19 +17,14 @@ from pyrogram import filters
 load_dotenv()
 
 # Get it from my.telegram.org
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("API_ID", "8714251"))
+API_HASH = getenv("API_HASH", "50c97a11b622575c5b9441b1062f601a")
 
 ## Get it from @Botfather in Telegram.
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("BOT_TOKEN", "5276474965:AAFGJNgQEWJH1qQ8RlHBNAM9e3aJH7ke18c")
 
 # Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
-
-if MONGO_DB_URI != None:
-    MONGO_DB_URI = MONGO_DB_URI.strip()
-if MONGO_DB_URI == "":
-    MONGO_DB_URI = None
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://jinkun:raizel9783@cluster0.yyayi.mongodb.net/myfirstdatabase?retrywrites=true&w=majority")
 
 # Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
@@ -42,14 +37,14 @@ SONG_DOWNLOAD_DURATION = int(
 )  # Remember to give value in Minutes
 
 # You'll need a Private Group ID for this.
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001584010815"))
 
 # A name for your Music bot.
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","SiestaXMusic")
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", "Boa Music Bot")
 
 # Your User ID.
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "").split())
+    map(int, getenv("OWNER_ID", "5394536520").split())
 )  # Input type must be interger
 
 # Get it from http://dashboard.heroku.com/account
@@ -59,14 +54,25 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
 # For customized or modified Repository
-UPSTREAM_REPO = "https://github.com/TechShreyash/SiestaXMusic"
-UPSTREAM_BRANCH = "main"
+UPSTREAM_REPO = getenv(
+    "UPSTREAM_REPO",
+    "https://github.com/NicoHisoka/YukkiMusicBot",
+)
+UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 # GIT TOKEN ( if your edited repo is private)
-GIT_TOKEN = getenv("GIT_TOKEN", None)
+GIT_TOKEN = getenv("GIT_TOKEN", "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")
+
+# Only  Links formats are  accepted for this Var value.
+SUPPORT_CHANNEL = getenv(
+    "SUPPORT_CHANNEL", "https://t.me/boa_updates"
+)  # Example:- https://t.me/TheYukki
+SUPPORT_GROUP = getenv(
+    "SUPPORT_GROUP", "https://t.me/boahancock_support"
+)  # Example:- https://t.me/YukkiSupport
 
 # Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
-AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False").capitalize()
+AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "false")
 
 # Time after which you're assistant account will leave chats automatically.
 AUTO_LEAVE_ASSISTANT_TIME = int(
@@ -75,14 +81,14 @@ AUTO_LEAVE_ASSISTANT_TIME = int(
 
 # Time after which bot will suggest random chats about bot commands.
 AUTO_SUGGESTION_TIME = int(
-    getenv("AUTO_SUGGESTION_TIME", "5400")
+    getenv("AUTO_SUGGESTION_TIME", "7700")
 )  # Remember to give value in Seconds
 
 # Set it True if you want to delete downloads after the music playout ends from your downloads folder
-AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", "True")
+AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", None)
 
 # Set it True if you want to bot to suggest about bot commands to random chats of your bots.
-AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "False").capitalize()
+AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "True")
 
 # Set it true if you want your bot to be private only [You'll need to allow CHAT_ID via /authorise command then only your bot will play music in that chat.]
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
@@ -94,24 +100,24 @@ YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
 TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
 
 # Your Github Repo.. Will be shown on /start Command
-GITHUB_REPO = "https://github.com/TechShreyash/SiestaXMusic"
+GITHUB_REPO = getenv("GITHUB_REPO", "https://t.me/zerohisooka")
 
 # Spotify Client.. Get it from https://developer.spotify.com/dashboard
-SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "817ef3b667ae41fa904568b4eeaee96d")
-SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "8130539ee3cf4b30bc24d2f694a60838")
+SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", None)
+SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", None)
 
 # Maximum number of video calls allowed on bot. You can later set it via /set_video_limit on telegram
 VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "3"))
 
 # Maximum Limit Allowed for users to save playlists on bot's server
-SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "100"))
+SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "30"))
 
 # MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
-PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "50"))
+PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "25"))
 
 # Cleanmode time after which bot will delete its old messages from chats
 CLEANMODE_DELETE_MINS = int(
-    getenv("CLEANMODE_MINS", "5")
+    getenv("CLEANMODE_MINS", "9999999")
 )  # Remember to give value in Seconds
 
 
@@ -129,7 +135,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(
 
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
-STRING1 = getenv("STRING_SESSION", None)
+STRING1 = getenv("STRING_SESSION", "BQBgpjYlmKMxhmV2Q4JNc3sYZHpfaLS5WCHf-CAHcNVU3zXmYWSNtdcb1m5bngGBS-oUvlpawcGpSDTTYqYZ0GycQagyoGkC4kw_aOVQk2HaZOL9rTdwjKRmWxhq5z3iRYInSr8z7uUma_ltqbv9X2LqOKt6RAcH2QqJ2vM7eNQnNTVNijF-IbrDp8ICe1dXPxhIUAAsz_dYtzOVzN66KiXzxAVnWuNekeyupCmjDh6gGRAUSeZTc7c72xjULj4nm_f-3SNCQclDrd0rKwh0Vil7-x2zFDDPXR9TELYnU5F0vuFo6714Gg3z0FKFA_ehZS-O3ZaRLqFJVSD7yAEkDfvTAAAAAHsrA8MA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
@@ -153,13 +159,13 @@ adminlist = {}
 lyrical = {}
 chatstats = {}
 userstats = {}
-clean = {}
+clean = {} #a
 
 autoclean = []
 
 
 # Images
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/e17f42bc195635b668d6d.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/5a103460ae1c2e734cc51.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
@@ -169,11 +175,13 @@ PING_IMG_URL = getenv(
 PLAYLIST_IMG_URL = getenv(
     "PLAYLIST_IMG_URL",
     "assets/Playlist.jpeg",
+    
 )
 
 GLOBAL_IMG_URL = getenv(
     "GLOBAL_IMG_URL",
     "assets/Global.jpeg",
+    
 )
 
 STATS_IMG_URL = getenv(
@@ -208,17 +216,17 @@ YOUTUBE_IMG_URL = getenv(
 
 SPOTIFY_ARTIST_IMG_URL = getenv(
     "SPOTIFY_ARTIST_IMG_URL",
-    "https://telegra.ph/file/a7b2e483f80757145ac09.jpg",
+    "assets/SpotifyArtist.jpeg",
 )
 
 SPOTIFY_ALBUM_IMG_URL = getenv(
     "SPOTIFY_ALBUM_IMG_URL",
-    "https://telegra.ph/file/a7b2e483f80757145ac09.jpg",
+    "assets/SpotifyAlbum.jpeg",
 )
 
 SPOTIFY_PLAYLIST_IMG_URL = getenv(
     "SPOTIFY_PLAYLIST_IMG_URL",
-    "https://telegra.ph/file/a7b2e483f80757145ac09.jpg",
+    "assets/SpotifyPlaylist.jpeg",
 )
 
 
@@ -234,6 +242,35 @@ DURATION_LIMIT = int(time_to_seconds(f"{DURATION_LIMIT_MIN}:00"))
 SONG_DOWNLOAD_DURATION_LIMIT = int(
     time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00")
 )
+
+if SUPPORT_CHANNEL:
+    if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
+        print(
+            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+        )
+        sys.exit()
+
+if SUPPORT_GROUP:
+    if not re.match("(?:http|https)://", SUPPORT_GROUP):
+        print(
+            "[ERROR] - Your SUPPORT_GROUP url is wrong. Please ensure that it starts with https://"
+        )
+        sys.exit()
+
+if UPSTREAM_REPO:
+    if not re.match("(?:http|https)://", UPSTREAM_REPO):
+        print(
+            "[ERROR] - Your UPSTREAM_REPO url is wrong. Please ensure that it starts with https://"
+        )
+        sys.exit()
+
+if GITHUB_REPO:
+    if not re.match("(?:http|https)://", GITHUB_REPO):
+        print(
+            "[ERROR] - Your GITHUB_REPO url is wrong. Please ensure that it starts with https://"
+        )
+        sys.exit()
+
 
 if PING_IMG_URL:
     if PING_IMG_URL != "assets/Ping.jpeg":
