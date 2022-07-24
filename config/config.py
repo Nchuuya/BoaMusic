@@ -61,7 +61,7 @@ UPSTREAM_REPO = getenv(
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 
 # GIT TOKEN ( if your edited repo is private)
-GIT_TOKEN = getenv("GIT_TOKEN", "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")
+GIT_TOKEN = getenv("GIT_TOKEN", "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")
 
 # Only  Links formats are  accepted for this Var value.
 SUPPORT_CHANNEL = getenv(
@@ -135,7 +135,7 @@ TG_VIDEO_FILESIZE_LIMIT = int(
 
 
 # You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
-STRING1 = getenv("STRING_SESSION", "BQA13AaVuJ4Cbd214UW1j7HvhAZS-TiRDubXO2sq6y1zjekOSus4pF3HbErWGNL7jKD2MT4WbyIceRuUOYKa-mUN8bJVk1coMl5eLeeUUBaLWuSClBXswVTHrkZAVL7IfonZ6Y6OWp0Nuo6i5ho5ZKKtsYX-ggVLm7Yu8U4RniqirD8iXUqoFVmEef2Fq_M8Yj1S6tJn1CS67wPNHIns4NQo8mO8eNq0FF_oIT28cpzo6tEkF_iiA26r1CzCzvGe4wMvBGLhWIijiyRQlkE18UzvOveAxT88KS0N_H5bHbJfFbW_CxjPlkPbxIHg0AmGXyE0mOL4qWOV7ZWlXZy3WmOGAAAAAHsrA8MA")
+STRING1 = getenv("STRING_SESSION", "BQBgpjYlmKMxhmV2Q4JNc3sYZHpfaLS5WCHf-CAHcNVU3zXmYWSNtdcb1m5bngGBS-oUvlpawcGpSDTTYqYZ0GycQagyoGkC4kw_aOVQk2HaZOL9rTdwjKRmWxhq5z3iRYInSr8z7uUma_ltqbv9X2LqOKt6RAcH2QqJ2vM7eNQnNTVNijF-IbrDp8ICe1dXPxhIUAAsz_dYtzOVzN66KiXzxAVnWuNekeyupCmjDh6gGRAUSeZTc7c72xjULj4nm_f-3SNCQclDrd0rKwh0Vil7-x2zFDDPXR9TELYnU5F0vuFo6714Gg3z0FKFA_ehZS-O3ZaRLqFJVSD7yAEkDfvTAAAAAHsrA8MA")
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
 STRING4 = getenv("STRING_SESSION4", None)
